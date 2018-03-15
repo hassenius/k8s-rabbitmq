@@ -1,0 +1,25 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rabbitmq
+spec:
+  selector:
+    app: rabbitmq
+  type: ClusterIP
+  ports:
+  - name: epmd
+    port: 4369
+    protocol: TCP
+    targetPort: epmd
+  - name: amqp
+    port: 5672
+    protocol: TCP
+    targetPort: amqp
+  - name: dist
+    port: 25672
+    protocol: TCP
+    targetPort: dist
+  - name: stats
+    port: 15672
+    protocol: TCP
+    targetPort: stats
