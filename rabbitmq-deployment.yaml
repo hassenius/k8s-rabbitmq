@@ -48,16 +48,16 @@ spec:
           value: '"6GiB"'
         image: bitnami/rabbitmq:3.7.2-r1
         imagePullPolicy: IfNotPresent
-        livenessProbe:
-          exec:
-            command:
-            - rabbitmqctl
-            - status
-          failureThreshold: 6
-          initialDelaySeconds: 120
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 5
+#        livenessProbe:
+#          exec:
+#            command:
+#            - rabbitmqctl
+#            - status
+#          failureThreshold: 6
+#          initialDelaySeconds: 120
+#          periodSeconds: 10
+#          successThreshold: 1
+#          timeoutSeconds: 5
         name: rabbitmq
         ports:
         - containerPort: 4369
@@ -72,16 +72,16 @@ spec:
         - containerPort: 15672
           name: stats
           protocol: TCP
-        readinessProbe:
-          exec:
-            command:
-            - rabbitmqctl
-            - status
-          failureThreshold: 3
-          initialDelaySeconds: 10
-          periodSeconds: 5
-          successThreshold: 1
-          timeoutSeconds: 3
+#        readinessProbe:
+#          exec:
+#            command:
+#            - rabbitmqctl
+#            - status
+#          failureThreshold: 3
+#          initialDelaySeconds: 10
+#          periodSeconds: 5
+#          successThreshold: 1
+#          timeoutSeconds: 3
         resources:
           requests:
             cpu: 100m
